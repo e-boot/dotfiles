@@ -21,23 +21,16 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-
-
 #set wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/homelander.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/rainy.jpg
 
 # allow transparency window on kitty
 exec --no-startup-id picom -b
 
 #assign app to windows
-assign [class="idea"] 3
-assign [class="discord"] 6
-assign [class="brave"] 2
+assign [class="discord"] $ws6
 
 #Lauch App no Startup# 
-exec --no-startup-id i3-msg 'workspace 1; exec kitty'
-exec --no-startup-id i3-msg 'workspace 2; exec brave' 
-exec --no-startup-id i3-msg 'workspace 3; exec idea'
 exec --no-startup-id i3-msg 'workspace 6; exec discord'
 
 # start Apps from keybindings
@@ -53,7 +46,7 @@ bindsym $mod+Shift+q kill
 # start rofi(program launcher)
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
 
-# change focus
+# change focus:q
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
